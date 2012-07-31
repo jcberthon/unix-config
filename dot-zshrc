@@ -116,16 +116,15 @@ date_format="%H:%M:%S"
 # user@host » ; [ Day time(hh:mm:ss) ]
 
 #date="${cyan}[%{$fg_bold[$date_color]%}%D{$date_format}${cyan}]%{$fg_bold[$user_color]%}"
-host="%{$fg_bold[$path_crochet]%}[ %{$reset_color%}% %4c%1v %{$fg_bold[$path_crochet]%}]${CLEAR}
-%{$fg_bold[$user_color]%}%n%{$fg_bold[$arrobase_color]%}@%m $user_prompt%{$fg_bold[$date_color]%} » %{$fg_bold[$user_color]%}"
-cpath="%B%{$fg_bold[$path_color]%}%~%b"
-end="%{$reset_color%}%"
-
-date="${cyan}[%{$fg_bold[$date_color]%}%D{$date_format}${cyan}]%{$fg_bold[$user_color]%}%b"
-#host="$%{$path_crochet%}[ %{$reset_color%}% %4c%1v %{$path_crochet%}]${CLEAR}
-#%{$user_color%}%n%{$arrobase_color%}@%m $user_prompt%{$date_color%} » %{$user_color%}"
-#cpath="%B%{$path_color%}%~%b"
+#host="%{$fg_bold[$path_crochet]%}[ %{$reset_color%}% %4c%1v %{$fg_bold[$path_crochet]%}]${CLEAR}
+#%{$fg_bold[$user_color]%}%n%{$fg_bold[$arrobase_color]%}@%m $user_prompt%{$fg_bold[$date_color]%} » %{$fg_bold[$user_color]%}"
+#cpath="%B%{$fg_bold[$path_color]%}%~%b"
 #end="%{$reset_color%}%"
+
+date="${cyan}[%{$fg[$date_color]%}%D{$date_format}${cyan}]%{$fg[$user_color]%}"
+host="%{$fg[$path_crochet]%}[ %{$reset_color%}% %4c%1v %{$fg[$path_crochet]%}]${CLEAR}
+%{$fg[$user_color]%}%n@%m $user_prompt %{$fg[$date_color]%}»%{$fg[$user_color]%} "
+end="%{$reset_color%}%"
 
 PS1="$host"
 RPS1="$date" 
