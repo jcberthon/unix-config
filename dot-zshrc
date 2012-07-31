@@ -115,11 +115,17 @@ date_format="%H:%M:%S"
 # [ ~ ]
 # user@host » ; [ Day time(hh:mm:ss) ]
 
-date="${cyan}[%{$fg_bold[$date_color]%}%D{$date_format}${cyan}]%{$fg_bold[$user_color]%}"
+#date="${cyan}[%{$fg_bold[$date_color]%}%D{$date_format}${cyan}]%{$fg_bold[$user_color]%}"
 host="%{$fg_bold[$path_crochet]%}[ %{$reset_color%}% %4c%1v %{$fg_bold[$path_crochet]%}]${CLEAR}
 %{$fg_bold[$user_color]%}%n%{$fg_bold[$arrobase_color]%}@%m $user_prompt%{$fg_bold[$date_color]%} » %{$fg_bold[$user_color]%}"
 cpath="%B%{$fg_bold[$path_color]%}%~%b"
 end="%{$reset_color%}%"
+
+date="${cyan}[%{$fg_bold[$date_color]%}%D{$date_format}${cyan}]%{$fg_bold[$user_color]%}%b"
+#host="$%{$path_crochet%}[ %{$reset_color%}% %4c%1v %{$path_crochet%}]${CLEAR}
+#%{$user_color%}%n%{$arrobase_color%}@%m $user_prompt%{$date_color%} » %{$user_color%}"
+#cpath="%B%{$path_color%}%~%b"
+#end="%{$reset_color%}%"
 
 PS1="$host"
 RPS1="$date" 
@@ -292,20 +298,8 @@ a       banner='figlet'
 ## DIR #########
 ################
 
-# QTDIR, si installé !
-if [[ -d /usr/lib/qt3 ]] ; then
-        QTDIR=/usr/lib/qt3/;
-        export QTDIR;
-fi
-
-# KDEDIR, si présent !
-if [[ -d /usr/lib/kde3 ]] ; then
-        KDEDIR=/usr/lib/kde3/;
-        export KDEDIR;
-fi
-
-export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH:~/scripts:$HOME/local/bin
-export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH:$HOME/local/lib
+export PATH=$PATH:~/scripts:$HOME/local/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lib
 export MANPATH=$MANPATH:$HOME/local/man
 
 #####################################################
