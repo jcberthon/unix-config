@@ -1,0 +1,20 @@
+section: screens
+   desktop:
+   laptop:
+   linux:
+end
+section: aliases
+   desktop:
+      thorsmork
+   laptop:
+      l0514
+end
+section: links
+   desktop:
+      left = laptop
+   laptop:
+      right = desktop
+      right = linux
+   linux:
+      left = laptop
+end
